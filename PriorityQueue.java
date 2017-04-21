@@ -1,11 +1,11 @@
 public interface PriorityQueue {
 
-    public void add(Comparable x);
+    public void add(T x);
 
     public boolean isEmpty();
 
-    public Comparable peekMin();
+    public T peekMin();
 
-    public Comparable removeMin();
+    public T removeMin();
 
 }
