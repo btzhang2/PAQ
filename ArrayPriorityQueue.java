@@ -5,17 +5,17 @@
 
 import java.util.ArrayList;
 
-public class ArrayPriorityQueue{
+public class ArrayPriorityQueue<T> implements PriorityQueue<T>{
 
     private int _size;
-    private ArrayList<Comparable> _queue;
+    private ArrayList<T> _queue;
     
     public ArrayPriorityQueue(){
 	_size = 0;
-	_queue = new ArrayList<Comparable>();
+	_queue = new ArrayList<T>();
     }
     
-    public void add( Comparable x ){
+    public void add( T x ){
 	if ( isEmpty() ){
 	    _queue.add(x);
 	    _size++;
@@ -35,24 +35,24 @@ public class ArrayPriorityQueue{
 	return _size == 0;
     }
 
-    public Comparable peekMin(){
+    public T peekMin(){
 	if ( isEmpty() ){
 	    throw new IllegalStateException("queue is empty, cannot check from queue");
 	}
 	return _queue.get(_size-1);
     }
 
-    public Comparable removeMin(){
+    public T removeMin(){
 	if ( isEmpty() ){
 	    throw new IllegalStateException("queue is empty, cannot remove from queue");
 	}
-	Comparable ret = _queue.remove(_size-1);
+	T ret = _queue.remove(_size-1);
 	_size--;
 	return ret;
     }
 
     public static void main(String[] args){
-	ArrayPriorityQueue a = new ArrayPriorityQueue();
+	ArrayPriorityQueue<Comparable> a = new ArrayPriorityQueue<Comparable>();
 
 	//Test functionality with strings
 	a.add("c");
