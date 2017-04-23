@@ -5,7 +5,7 @@
 
 import java.util.ArrayList;
 
-public class ArrayPriorityQueue<T> implements PriorityQueue<T>{
+public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueue<T>{
 
     private int _size;
     private ArrayList<T> _queue;
@@ -52,7 +52,7 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T>{
     }
 
     public static void main(String[] args){
-	ArrayPriorityQueue<Comparable> a = new ArrayPriorityQueue<Comparable>();
+	ArrayPriorityQueue<String> a = new ArrayPriorityQueue<String>();
 
 	//Test functionality with strings
 	a.add("c");
@@ -73,41 +73,45 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T>{
 	
 	System.out.println();
 
-	//Test functionality with integers
-	a.add(7);
-	a.add(4);
-	a.add(5);
-	a.add(1);
-
-	System.out.println(a.isEmpty());
-
-	System.out.println(a.peekMin());
+	ArrayPriorityQueue<Integer> b = new ArrayPriorityQueue<Integer>();
 	
-	System.out.println(a.removeMin());
-	System.out.println(a.removeMin());
-	System.out.println(a.removeMin());
-	System.out.println(a.removeMin());
+	//Test functionality with integers
+	b.add(7);
+	b.add(4);
+	b.add(5);
+	b.add(1);
 
-	System.out.println(a.isEmpty());
+	System.out.println(b.isEmpty());
+
+	System.out.println(b.peekMin());
+	
+	System.out.println(b.removeMin());
+	System.out.println(b.removeMin());
+	System.out.println(b.removeMin());
+	System.out.println(b.removeMin());
+
+	System.out.println(b.isEmpty());
 	
 	System.out.println();
 
+	ArrayPriorityQueue<Double> c = new ArrayPriorityQueue<Double>();
+
 	//Test functionality with doubles
-	a.add(2.54);
-	a.add(6.94);
-	a.add(3.33);
-	a.add(20.56);
+	c.add(2.54);
+	c.add(6.94);
+	c.add(3.33);
+	c.add(20.56);
 
-	System.out.println(a.isEmpty());
+	System.out.println(c.isEmpty());
 
-	System.out.println(a.peekMin());
+	System.out.println(c.peekMin());
 	
-	System.out.println(a.removeMin());
-	System.out.println(a.removeMin());
-	System.out.println(a.removeMin());
-	System.out.println(a.removeMin());
+	System.out.println(c.removeMin());
+	System.out.println(c.removeMin());
+	System.out.println(c.removeMin());
+	System.out.println(c.removeMin());
 
-	System.out.println(a.isEmpty());
+	System.out.println(c.isEmpty());
 
 	System.out.println();
     }
