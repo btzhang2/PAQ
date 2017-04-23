@@ -19,11 +19,11 @@ public class Ticket implements Comparable<Ticket>{
 	return VIPLevel;
     }
 
-    public int getStatus(){
+    public boolean getStatus(){
 	return isSolved;
     }
 
-    public int setVIPLevel(int newVIPLevel){
+    public void setVIPLevel(int newVIPLevel){
 	VIPLevel = newVIPLevel;
     }
     
