@@ -5,7 +5,7 @@ import java.io.IOException;
 public class HelpDesk{
 
     //instance variables
-    private int _Ticket = 1;
+    private int _currentID = 1;
     private PriorityQueue<Ticket> _queue = new ArrayPriorityQueue<>();
     private ArrayList<Ticket> _solved = new ArrayList<>();
     private Console _console = System.console();
@@ -34,8 +34,8 @@ public class HelpDesk{
 
     public void submitTicket(){
 	System.out.println("Submit your ticket.\n");
-	_queue.add(new Ticket( _Ticket, getInt("VIPLevel: "), getString("Name: "), getString("Problem: ")));
-	System.out.println("There are " + _Ticket++ + " unsolved Tickets ahead of you.\n");
+	_queue.add(new Ticket( _currentID, getInt("VIPLevel: "), getString("Name: "), getString("Problem: ")));
+	System.out.println("There are " + _currentID++ + " unsolved Tickets ahead of you.\n");
     }
 
     public void solveTicket(){
