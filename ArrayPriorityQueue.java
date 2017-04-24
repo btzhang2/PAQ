@@ -7,14 +7,17 @@ import java.util.ArrayList;
 
 public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueue<T>{
 
+    //instance vars
     private int _size;
     private ArrayList<T> _queue;
     
+    //constructor
     public ArrayPriorityQueue(){
 	_size = 0;
 	_queue = new ArrayList<T>();
     }
     
+    //adds an item to the queue according to priority
     public void add( T x ){
 	if ( isEmpty() ){
 	    _queue.add(x);
@@ -31,10 +34,12 @@ public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueu
 	}	
     }
 
+    //returns true if the queue is empty, false otherwise
     public boolean isEmpty(){
 	return _size == 0;
     }
 
+    //returns the first item in the queue, which is the highest priority item
     public T peekMin(){
 	if ( isEmpty() ){
 	    throw new IllegalStateException("queue is empty, cannot check from queue");
@@ -42,6 +47,7 @@ public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueu
 	return _queue.get(_size-1);
     }
 
+    //removes the first item in the queue, which is the highest priority item
     public T removeMin(){
 	if ( isEmpty() ){
 	    throw new IllegalStateException("queue is empty, cannot remove from queue");
