@@ -5,18 +5,25 @@ import java.io.IOException;
 public class HelpDesk{
 
     //instance variables
-    private int _currentID = 1;
-    private PriorityQueue<Ticket> _queue = new ArrayPriorityQueue<>();
-    private ArrayList<Ticket> _solved = new ArrayList<>();
-    private Console _console = System.console();
+    private int _currentID;
+    private PriorityQueue<Ticket> _queue;
+    private ArrayList<Ticket> _solved;
+    private Console _console;
 
+    //default constructor
     public HelpDesk(){	
+	_currentID = 1;
+	_queue = new ArrayPriorityQueue<>();
+	_solved = new ArrayList<>();
+	_console = System.console();
     }
 
+    //returns the next line the user inputs
     public String getString(String text){
 	return _console.readLine(text);
     }
 
+    //returns the VIP level of the next ticket
     public int getInt(String text){
 	boolean flag = true;
 	int retInt = 0;
@@ -32,18 +39,21 @@ public class HelpDesk{
 	return retInt;
     }
 
+    //creates a ticket and adds it to the queue
     public void submitTicket(){
 	System.out.println("Submit your ticket.\n");
 	_queue.add(new Ticket( _currentID, getInt("VIPLevel: "), getString("Name: "), getString("Problem: ")));
 	System.out.println("There are " + _currentID++ + " unsolved Tickets ahead of you.\n");
     }
 
+    //solves the next ticket in the queue
     public void solveTicket(){
 	if (_queue.isEmpty()){
 	    System.out.println("\nThere are no unsolved Tickets at the moment.\n");
 	    return;
 	}
 
+	//asks the user if they want to solve the ticket or do something else
 	Ticket currentTicket = _queue.peekMin();
 	int choice = 4;
 	System.out.println("\n" + currentTicket);
@@ -71,6 +81,7 @@ public class HelpDesk{
 	}
     }
 
+    //prints all the tickets that have been solved
     public void viewSolvedTickets(){
 	if (_solved.isEmpty()){
 	    System.out.println("No tickets here, how about you go solve some?\n");
@@ -81,7 +92,8 @@ public class HelpDesk{
 	    }
 	}
     }
-
+	
+    //creates the help desk, including the CLI
     public void initiateHelpDesk(){
 	int choice = 0;
 	while (true){
@@ -105,7 +117,6 @@ public class HelpDesk{
 	}
     }
 	    
-
     public static void main(String[] args){
 	HelpDesk Helper = new HelpDesk();
 
