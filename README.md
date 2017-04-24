@@ -9,10 +9,10 @@ When choosing to submit a ticket, the user is asked the priority of their issue,
 ##Solving a Ticket
 
 When solving a ticket, the user is given the option to answer the ticket, change the VIPLevel of the ticket, remove the ticket (giving it no solution) and to do nothing.
--When answering the ticket, the user is required to type in a solution and the ticket is then removed from the PriorityQueue and moved to an archive of solved tickets which can also be accessed by the user.
--When changing the VIPLevel of the ticket, the VIPLevel of the ticket is adjusted and then the ticket is removed from the PriorityQueue and added again, which places it into the queue at the proper position.
--When removing a ticket, the ticket is taken out of the PriorityQueue.
--Doing nothing takes the user back to the initial HelpDesk screen.
+* When answering the ticket, the user is required to type in a solution and the ticket is then removed from the PriorityQueue and moved to an archive of solved tickets which can also be accessed by the user.
+* When changing the VIPLevel of the ticket, the VIPLevel of the ticket is adjusted and then the ticket is removed from the PriorityQueue and added again, which places it into the queue at the proper position.
+* When removing a ticket, the ticket is taken out of the PriorityQueue.
+* Doing nothing takes the user back to the initial HelpDesk screen.
 
 ##Viewing Solved Tickets
 
