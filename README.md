@@ -1,4 +1,4 @@
-# PAQ pd5: Piotr Milewski, Brooke Jin, Jason Lam
+# PAQ pd5: Piotr Milewski, Brooke Jin, Brandon Zhang
 
 When you initialize the program, the user is given the option to submit tickets, respond to tickets, look at previously solved tickets and leave the HelpDesk. When the program requires user input, the user can respond by typing in the corresponding integer or string. If the user doesn't input properly the program asks the user to correct themselves. We used the Console class to obtain inputs from the user, specifically using the method readLine(String fmt) to read input with a prompt given by fmt. We initially wanted to use keyboard.java from a while ago but found the Console class browsing StackOverflow.
 
